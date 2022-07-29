@@ -53,6 +53,8 @@ INSTALLED_APPS = [
     # apps inside app folder
     'apps.store',
     'apps.rest',
+    'apps.basket',
+    'apps.user',
     # packages
     'cloudinary_storage',
     'rest_framework',
@@ -147,7 +149,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
-# cloudnary storage
+# custom user model 
+AUTH_USER_MODEL = "user.User"
+
+# cloudinary storage
 API_KEY = os.environ.get("API_KEY", env_config("API_KEY"))
 CLOUD_NAME = os.environ.get('CLOUD_NAME', env_config('CLOUD_NAME'))
 API_SECRET = os.environ.get('API_SECRET', env_config('API_SECRET'))
